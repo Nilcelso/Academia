@@ -4,6 +4,10 @@ const { age, date  } =require('./date')
 const { put } = require('./routes')
 const { json } = require('express')
 
+exports.index = function (req, res) {
+    return res.render("instructors/index", { instructors: data.instructors })
+}
+
 // mostrar os instrutores cadastrados
 exports.show = function(req, res) {
     const { id } = req.params
@@ -94,7 +98,8 @@ exports.put = function(req, res) {
     const instructor = {
         ...foundInstructor,
         ...req.body,
-        birth: Date.parse(req.body.birth)
+        birth: Date.parse(req.body.birth),
+        id: Number(req.body.id)
     }
 
     date.instructors[index] = instructor
