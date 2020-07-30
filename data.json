@@ -1,15 +1,6 @@
 {
   "instructors": [
     {
-      "id": 1,
-      "avatar_url": "https://web.whatsapp.com/",
-      "name": "Nilcelso",
-      "birth": 1580601600000,
-      "gender": "M",
-      "services": "rrrrr, fffff",
-      "created_at": 1595944854090
-    },
-    {
       "id": 2,
       "avatar_url": "https://web.whatsapp.com/",
       "name": "pedro",
