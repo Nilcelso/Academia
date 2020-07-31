@@ -1,3 +1,5 @@
+"members": [],
+
 module.exports = {
 
     age: function (timestamp) {
