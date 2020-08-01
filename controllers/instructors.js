@@ -1,8 +1,6 @@
 const fs = require('fs')
 const data = require('../data.json')
-const { age, date  } =require('../date')
-const { put } = require('./routes')
-const { json } = require('express')
+const { age, utils  } = require('../utils')
 
 exports.index = function (req, res) {
     return res.render("instructors/index", { instructors: data.instructors })
@@ -79,7 +77,7 @@ exports.edit = function(req, res) {
 
     const instructor = {
         ...foundInstructor,
-        birth: date(foundInstructor.birth)
+        birth: utils(foundInstructor.birth)
     }
 
 
@@ -106,7 +104,7 @@ exports.put = function(req, res) {
         id: Number(req.body.id)
     }
 
-    date.instructors[index] = instructor
+    utils.instructors[index] = instructor
 
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
         if(err) return res.send("Erro")

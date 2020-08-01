@@ -1,8 +1,7 @@
 const fs = require('fs')
 const data = require('../data.json')
-const { age, date  } =require('../date')
-const { put } = require('./routes')
-const { json } = require('express')
+const { age, utils  } = require('../utils')
+
 
 exports.index = function (req, res) {
     return res.render("members/index", { members: data.members })
@@ -15,22 +14,23 @@ exports.show = function(req, res) {
     const foundMember = data.members.find(function(member) {
         return member.id == id
     })
-    if (!foundMember) return res.send("Instrutor não encontratado.")
+    if (!foundMember) return res.send("Membro não encontratado.")
 
     
     const member = {
         ...foundMember,
-        age: age(foundMember.birth),
+        age: age(foundMember.birth)
     }
 
     return res.render("members/show", { member })
 } 
 
+//create
 exports.create = function (req, res) {
     return res.render("members/create")
 }
 
-//create post
+// post
 exports.post = function(req, res) {
     const keys = Object.keys(req.body)
 
@@ -77,7 +77,7 @@ exports.edit = function(req, res) {
 
     const member = {
         ...foundMember,
-        birth: date(foundMember.birth)
+        birth: utils(foundMember.birth)
     }
 
 
@@ -85,7 +85,6 @@ exports.edit = function(req, res) {
 }
 
 //put
-
 exports.put = function(req, res) {
     const { id } = req.body
     let index = 0
@@ -104,7 +103,7 @@ exports.put = function(req, res) {
         id: Number(req.body.id)
     }
 
-    date.members[index] = member
+    utils.members[index] = member
 
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
         if(err) return res.send("Erro")
