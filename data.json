@@ -1,6 +1,17 @@
 {
-  "members": [],
-  
+  "members": [
+    {
+      "avatar_url": "https://web.whatsapp.com/ffffffff",
+      "name": "pedro",
+      "email": "nilcelsop@gmail.com",
+      "birth": null,
+      "gender": "M",
+      "blood": "O1",
+      "weight": "55",
+      "height": "189",
+      "id": 1
+    }
+  ],
   "instructors": [
     {
       "id": 1,

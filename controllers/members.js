@@ -40,21 +40,21 @@ exports.post = function(req, res) {
         }
     }
     
-    let {avatar_url, birth, name, services, gender} = req.body
-    
-    birth = Date.parse(birth)
-    const created_at = Date.now()
-    const id = Number(data.members.length + 1)
+     
+    birth = Date.parse(req.body.birth)
+  
+    let id = 1
+    const lastMember = data.members[data.members.length - 1]
+
+    if(lastMember) {
+        id = lastMember.id + 1
+    }
 
 
     data.members.push({
+        ...req.body,
         id,
-        avatar_url,
-        name,
-        birth,
-        gender,
-        services,
-        created_at,
+        birth
     })
 
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err) {
