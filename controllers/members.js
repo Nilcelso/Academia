@@ -7,6 +7,7 @@ exports.index = function (req, res) {
     return res.render("members/index", { members: data.members })
 }
 
+
 // mostrar os instrutores cadastrados
 exports.show = function(req, res) {
     const { id } = req.params
