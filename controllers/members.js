@@ -20,7 +20,7 @@ exports.show = function(req, res) {
     
     const member = {
         ...foundMember,
-        age: age(foundMember.birth)
+        birth: utils(foundMember.birth).birthDay
     }
 
     return res.render("members/show", { member })

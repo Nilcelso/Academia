@@ -77,7 +77,7 @@ exports.edit = function(req, res) {
 
     const instructor = {
         ...foundInstructor,
-        birth: utils(foundInstructor.birth)
+        birth: utils(foundInstructor.birth).iso
     }
 
 
