@@ -136,7 +136,7 @@ header {
     font-size: 12px;
 }
 /* === f0rmulario === */
-input {
+input, select {
     width: 100%;
     outline: none;
     color: #555;
