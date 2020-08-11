@@ -10,6 +10,17 @@
       "weight": "55",
       "height": "189",
       "id": 1
+    },
+    {
+      "avatar_url": "https://web.whatsapp.com/",
+      "name": "pedro",
+      "email": "nilcelsop@gmail.com",
+      "birth": null,
+      "gender": "M",
+      "blood": "O-",
+      "weight": "90",
+      "height": "180",
+      "id": 2
     }
   ],
   "instructors": [
